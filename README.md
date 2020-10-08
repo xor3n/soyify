@@ -1,15 +1,18 @@
 <h1 align="center">CoDeBARS</h1>
 <p align="center">CoDeBARS - Cool Debian Auto Ricing Scripts</p>
 
-**What Is This** If you feel that your ***YOUR DESKTOP LOOKS VERY BORING USE THIS TOOL AND MAKE IT EPIC !!!!***. It gives you a pretty sick bspwm rice
+DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
+
+**What Is This?** If you feel that your desktop is shit, you can use this to make it pretty epic. It gives you a pretty sick bspwm rice
 
 This version of the tool only supports **Debian and Debian Based Linux Distros (more will be added later)**.
 
 # Features
  - *Simple And Easy* to install
  - \[**todo**\] More cool themes and color scheme
- - \[**todo**\] Cross-platform support
+ - \[**todo**\] Moar distros
  - \[**todo**\] Make it POSIX compliant
+ - \[**todo**\] Options for custom dotfiles
 
 <br>
 
