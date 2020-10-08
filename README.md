@@ -13,7 +13,7 @@ This version of the tool only supports **Debian Based Linux Distros**.
 <br>
 
 # How to use
- 1. git clone https://github.com/SmokinSpectre/CodeBar
+ 1. git clone https://github.com/xor3n/codebars
  2. cd CodeBar
  3. chmod +x Setup.sh && ./setup.sh
  4. chmod +x CodeBar.sh && ./CodeBar.sh
