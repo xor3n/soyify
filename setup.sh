@@ -130,4 +130,5 @@ case $OS in
 	pkg install sxhkd
 	pkg install rofi
 	pkg install polybar
+    ;;
 esac
