@@ -43,6 +43,7 @@ case $OS in
 	apt-get -y install sxhkd
 	apt-get -y install rofi
     	apt-get -y install polybar
+	apt-get -y install ranger
     ;;
 
   pacman)
@@ -51,6 +52,7 @@ case $OS in
 	pacman -S --noconfirm sxhkd
 	pacman -S --noconfirm rofi
 	pacman -S --noconfirm polybar
+	pacman -S --noconfirm ranger
     ;;
 
   yum)
@@ -58,6 +60,7 @@ case $OS in
 	yum -y install sxhkd
 	yum -y install rofi
 	yum -y install polybar
+	yum -y install ranger
     ;;
 
   eopkg)
@@ -66,6 +69,7 @@ case $OS in
 	eopkg -y install sxhkd
 	eopkg -y install rofi
 	eopkg -y install polybar
+	eopkg -y install ranger
    ;;
 
   xbps)
@@ -80,6 +84,7 @@ case $OS in
 		xbps-install -y sxhkd
 		xbps-install -y rofi
 		xbps-install -y polybar
+		xbps-install -y ranger
 	fi
 
 	if [ $libc == glibc ]
@@ -89,6 +94,7 @@ case $OS in
 		xbps-install -y sxhkd
 		xbps-install -y rofi
 		xbps-install -y polybar
+		xbps-install -y ranger
 	fi
    ;;
 
@@ -98,6 +104,7 @@ case $OS in
 	apk add sxhkd
 	apk add rofi
 	apk add polybar
+	apk add ranger
     ;;
 
   brew)
@@ -107,6 +114,7 @@ case $OS in
 	brew install sxhkd
 	brew install rofi
 	brew install polybar
+	brew install ranger
     ;;
 
   compile)
@@ -122,6 +130,9 @@ case $OS in
 	git clone https://github.com/polybar/polybar.git
 	cd polybar
 	make clean install
+	git clone https://github.com/ranger/ranger.git
+	cd ranger
+	make clean install
     ;;
 
    pkg)
@@ -130,12 +141,23 @@ case $OS in
 	pkg install sxhkd
 	pkg install rofi
 	pkg install polybar
+	pkg install ranger
     ;;
     
    dnf)
-   	dnf install bspwm
+   	dnf upgrade
+	dnf install bspwm
 	dnf install sxhkd
 	dnk install rofi
 	dnf install polybar
+	dnf install ranger
     ;;
+    
+    portage)
+    	emerge -uDU --keep-going --with-bdeps=y @world	
+    	emerge --ask x11-wm/bspwm
+	emerge --ask x11-misc/sxhkd
+	emerge --ask x11-misc/rofi
+	emerge --ask x11-misc/polybar
+	emerge --ask app-misc/ranger
 esac
