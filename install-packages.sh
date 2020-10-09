@@ -31,7 +31,7 @@ clear
 sleep 0.5
 
 # confirm operating system/distribution
-echo -e "Enter Your Package Manager, If You Don't Know What It Means Just Press ? ?"
+echo -e "Enter Your Package Manager, If You Don't Know What It Means Just Press ?"
 read OS
 
 if [ $OS == ? ]
