@@ -11,6 +11,8 @@ DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
  - \[**todo**\] More distros
  - \[**todo**\] Make it POSIX compliant
  - \[**todo**\] Options for custom dotfiles
+ - \[**todo**\] Add st fork
+ - \[**todo**\] Add font installing
 
 <br>
 
