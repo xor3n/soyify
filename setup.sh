@@ -131,4 +131,11 @@ case $OS in
 	pkg install rofi
 	pkg install polybar
     ;;
+    
+   dnf)
+   	dnf install bspwm
+	dnf install sxhkd
+	dnk install rofi
+	dnf install polybar
+    ;;
 esac
