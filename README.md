@@ -10,7 +10,7 @@ This version of the tool only supports **Debian and Debian Based Linux Distros (
 # Features
  - *Simple And Easy* to install
  - \[**todo**\] More cool themes and color scheme
- - \[**todo**\] Moar distros
+ - \[**todo**\] More distros
  - \[**todo**\] Make it POSIX compliant
  - \[**todo**\] Options for custom dotfiles
 
