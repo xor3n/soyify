@@ -1,4 +1,4 @@
-<h1 align="center">XDBARS</h1>
+<h1 align="center">[XDBARS]</h1>
 <p align="center">XDBARS - Cross Distro BSPWM Auto Ricing Scripts</p>
 
 DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
