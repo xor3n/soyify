@@ -19,7 +19,7 @@ This version of the tool only supports **Debian and Debian Based Linux Distros (
 # How to use
  1. git clone https://github.com/xor3n/codebars
  2. cd CodeBar
- 3. chmod +x Setup.sh && ./setup.sh
+ 3. chmod +x Setup.sh && ./Setup.sh
  4. chmod +x CodeBar.sh && ./CodeBar.sh
 <br>
 
