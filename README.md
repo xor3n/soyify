@@ -6,7 +6,7 @@ DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
 **What Is This?** If you feel that your desktop is shit, you can use this to make it pretty epic. It gives you a pretty sick bspwm rice
 
 # Features
- - *Simple And Easy* to install
+ - *Simple And Easy* to install that provides you with a minimal yet highly functional environment
  - \[**todo**\] More cool themes and color scheme
  - \[**todo**\] More distros
  - \[**todo**\] Make it POSIX compliant
