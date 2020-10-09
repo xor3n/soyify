@@ -1,9 +1,8 @@
-
 #!/bin/bash
-# install the necessary packages
+# Install The Necessary Packages
 
 # yes
-echo "need root"
+echo "You Need Root To Perform The Setup"
 
 # add backports so that polybar can be installed
 echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
@@ -23,7 +22,7 @@ ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
 if [[ "$ASESR" != 0 ]]
 then
-   echo -e ""$E"No Internet connection!"
+   echo -e ""$E"No Internet connection! Please Connect To Your Internet Connection And Try Again."
    exit
 fi
 
@@ -32,12 +31,12 @@ clear
 sleep 0.5
 
 # confirm operating system/distribution
-echo -e "enter your package manager, if you don't know what a package manager is, type ?"
+echo -e "Enter Your Package Manager, If You Don't Know What It Means Just Press ? ?"
 read OS
 
 if [ $OS == ? ]
 then
-	echo "it's that thing you use to install stuff ok"
+	echo "It's The Thing That Install Things In Your Distro"
 fi
 
 if [ $OS == apt ]
@@ -94,7 +93,3 @@ fi
 sleep 1
 echo -e ""$S"The Setup Is Completed Now You Can Run The Tool!"
 sleep 1
-
-# install shit
-sudo apt -t buster-backports install polybar
-apt install bspwm sxhkd rofi feh
