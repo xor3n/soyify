@@ -23,6 +23,7 @@ DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
 # Author
 - **xor3n**
     - [Github](https://github.com/xor3n)
+    - [Donate] why donate when you can 𝓬𝓸𝓷𝓽𝓻𝓲𝓫𝓾𝓽𝓮
 
 # Soydev
 - **cubeperson**
