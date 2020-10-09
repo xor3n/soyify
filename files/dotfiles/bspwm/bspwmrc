@@ -1,0 +1,28 @@
+#!/bin/sh
+
+gtf 1600 900 60
+xrandr --newmode "1600x900_60.00"  172.80  1600 2040 2248 2576 900 1081 1084 1118  -HSync +Vsync
+xrandr --addmode eDP-1 "1600x900_60.00"
+xrandr --output eDP-1 --mode "1600x900_60.00"
+
+sxhkd &
+picom --experimental-backends &
+feh --bg-scale ~/Pictures/wallpapers/traffic-light.jpg
+
+bspc monitor -d 0 1 2 3 4 5
+
+bspc config border_width         6
+bspc config active_border_color \#39393f
+bspc config normal_border_color \#39393f
+bspc config focused_border_color \#cccccc
+bspc config window_gap          36
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
