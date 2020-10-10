@@ -8,7 +8,7 @@ super + Return
 	
 # browser
 super + f
-	firefox-developer-edition
+	firefox
 
 # program launcher
 super + @space
