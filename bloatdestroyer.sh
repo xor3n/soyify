@@ -185,3 +185,4 @@ case $pacm in
 		
                 echo -e "bloat, destroyed."
          ;; 
+esac
