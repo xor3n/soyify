@@ -8,7 +8,7 @@ xrandr --output eDP-1 --mode "1600x900_60.00"
 sxhkd &
 picom --experimental-backends &
 polybar --config=/home/$USER/.config/polybar/config.ini bar
-feh --bg-scale ~/Pictures/wallpapers/traffic-light.jpg
+feh --bg-scale ~/.config/wallpapers/h6f70szyude31.png
 
 bspc monitor -d 0 1 2 3 4 5
 
