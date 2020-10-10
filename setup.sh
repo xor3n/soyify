@@ -38,83 +38,31 @@ case $OS in
   apt)
     	# add backports so that polybar can be installed
 	echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >> /etc/apt/sources.list
-	apt-get update
-	apt-get -y install bspwm
-	apt-get -y install sxhkd
-	apt-get -y install rofi
-    	apt-get -y install polybar
-	apt-get -y install ranger
+	apt-get update && apt-get -y install bspwm sxhkd rofi polybar ranger vim git
     ;;
 
   pacman)
-	pacman -Sy
-	pacman -S --noconfirm bspwm
-	pacman -S --noconfirm sxhkd
-	pacman -S --noconfirm rofi
-	pacman -S --noconfirm polybar
-	pacman -S --noconfirm ranger
+	pacman -Sy && pacman -S --noconfirm bspwm sxhkd rofi polybar ranger vim git
     ;;
 
   yum)
-	yum -y install git
-	yum -y install sxhkd
-	yum -y install rofi
-	yum -y install polybar
-	yum -y install ranger
+	yum update && yum -y install bspwm sxhkd rofi polybar ranger vim git
     ;;
 
   eopkg)
-	eopkg update-repo
-	eopkg -y install git
-	eopkg -y install sxhkd
-	eopkg -y install rofi
-	eopkg -y install polybar
-	eopkg -y install ranger
-   ;;
+	eopkg update-repo && eopkg -y install git sxhkd rofi polybar ranger vim
+    ;;
 
   xbps)
-	echo "which libc are you using? [glibc] [musl]"
-
-	read libc
-
-	if [ $libc == musl ]
-	then
-		xbps-install -S
-		xbps-install -y bspwm
-		xbps-install -y sxhkd
-		xbps-install -y rofi
-		xbps-install -y polybar
-		xbps-install -y ranger
-	fi
-
-	if [ $libc == glibc ]
-	then
-		xbpx-install -S
-		xbps-install -y bspwm
-		xbps-install -y sxhkd
-		xbps-install -y rofi
-		xbps-install -y polybar
-		xbps-install -y ranger
-	fi
+	xbps-install -S && xbps-install -y bspwm sxhkd rofi polybar vim git
    ;;
 
   apk)
-	apk update
-	apk add bspwm
-	apk add sxhkd
-	apk add rofi
-	apk add polybar
-	apk add ranger
+	apk update && apk add bspwm sxhkd rofi polybar ranger vim git
     ;;
 
   brew)
-	brew update
-	brew upgrade
-	brew install bspwm
-	brew install sxhkd
-	brew install rofi
-	brew install polybar
-	brew install ranger
+	brew upgrade && brew install bspwm sxhkd rofi polybar ranger vim git
     ;;
 
   compile)
@@ -136,21 +84,11 @@ case $OS in
     ;;
 
    pkg)
-	pkg upgrade
-	pkg install bspwm
-	pkg install sxhkd
-	pkg install rofi
-	pkg install polybar
-	pkg install ranger
+	pkg upgrade && pkg install bspwm sxhkd rofi polybar ranger vim git
     ;;
     
    dnf)
-   	dnf upgrade
-	dnf install bspwm
-	dnf install sxhkd
-	dnk install rofi
-	dnf install polybar
-	dnf install ranger
+   	dnf upgrade && dnf install bspwm sxhkd rofi polybar ranger git
     ;;
     
     portage)
