@@ -27,7 +27,7 @@ read choice
 
 case $choice in
 	yes)
-		bloatdestroyer.sh
+		bash bloatdestroyer.sh
 	;;
 
 	no)
