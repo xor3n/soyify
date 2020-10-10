@@ -1,3 +1,4 @@
+#!/bin/bash
 clear
 echo -e "Thanks for using xdbars, enjoy the feeing of being a true soydev with you're epic tiling wm rice and CLI file manager, we hope it fills the void in your heart. Enter [start] to begin your install"
 read start
@@ -15,7 +16,7 @@ clear
 
 case $option1 in
    yes)
-      bash setup.sh
+      sudo ./setup.sh
    ;;
    
    no)
@@ -31,7 +32,7 @@ clear
 
 case $option4 in
    yes)
-      bash deploy.sh
+       ./deploy.sh
     ;;
 
    no)
