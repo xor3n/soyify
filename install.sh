@@ -66,20 +66,6 @@ case $option4 in
     ;;
 esac
 
-echo -e "Now on to the bloat destroyer script. This will remove all things replaced by newly installed packages, this is optional as some users may want to keep their previous DE/WM, file manager and terminal emulator. [yes] [no]"
+echo -e "thanks for using xdbars, we hope it worked, if not, that sucks, but feel free to let us know why at https://github.com/xor3n/xdbars. Don't forget to run postinstall.sh after you reboot!!"
 
-read option2
-
-case $option2 in
-
-   yes)
-      bash bloatdestroyer.sh
-    ;;
-
-   no)
-      echo -e "All your old software will remain, run this at any time to remove it automatically."
-    ;;
-
-esac
-
-echo -e "thanks for using xdbars, we hope it worked, if not, that sucks, but feel free to let us know why at https://github.com/xor3n/xdbars"
+reboot
