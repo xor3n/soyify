@@ -39,20 +39,15 @@ case $option1 in
    ;;
    
    no)
-      echo -e "We highly recommmend not running any other script except the hardening one as they may result in a non-fucntional system. However if you know wwhat you are doing, go ahead and run them."
+      echo -e "We highly recommend running every scipt, if you know what you are doing however, feel free to continue."
    ;;
 esac
 
-clear
-echo -e "Now to deploy everything, this will also automate all configuration for you. Without this, you will only have the needed needed, they will simply be installed and not remain in use. For this read we recommend running this. [yes] [no]"
+echo -e "Now to deploy everything, this will also automate all configuration for you. Without this, you will only have the packages needed, they will simply be installed and not remain in use. For this read we recommend running this. [yes] [no]"
 
 read option4
 
 clear
-
-echo -e "First you're going to have to enter the name for your lower privilege user account"
-read user
-su $user
 
 case $option4 in
    yes)
