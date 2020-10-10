@@ -185,4 +185,122 @@ case $pacm in
 		
                 echo -e "bloat, destroyed."
          ;; 
+	 
+	brew)
+		echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                brew remove $fman
+
+                #remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        brew remove $DEWM
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                brew delete $TE
+		
+		brew cleanup
+                echo -e "bloat, destroyed."
+	  ;;
+	  
+	pkg)
+		echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                pkg remove $fman
+
+		#remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+		
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        pkg delete $DEWM
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                pkg remove $TE
+		
+		pkg -y autoremove
+                echo -e "bloat, destroyed."
+	   ;;
+	 
+	 dnf)
+	 	echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                dnf remove  $fman
+
+                #remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        dnf remove $DEWM
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                dnf remove $TE
+
+                echo -e "bloat, destroyed."                echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                dnf remove $fman
+
+                #remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        dnf remove $DEWM
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                dnf remove $TE
+		
+		dnf autoremove
+                echo -e "bloat, destroyed."
+		
+	   portage)
+	   	echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                emerge --deselect $fman
+
+                #remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        emerge --deselect $DEWM
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                emerge --deselect $TE
+		
+		emerge --depclean -vp
+                echo -e "bloat, destroyed."
 esac
