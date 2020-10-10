@@ -66,21 +66,13 @@ case $OS in
     ;;
 
   compile)
-	git clone https://github.com/baskerville/bspwm.git
-	cd bspwm
-	make clean install
-	git clone https://github.com/baskerville/sxhkd.git
-	cd sxhkd
-	make clean install
-	git clone https://github.com/davatorium/rofi.git
-	cd rofi
-	make clean install
-	git clone https://github.com/polybar/polybar.git
-	cd polybar
-	make clean install
-	git clone https://github.com/ranger/ranger.git
-	cd ranger
-	make clean install
+	mkdir /tmp/xdbars-resources && cd /tmp/xdbars-resources
+	git clone https://github.com/baskerville/bspwm 
+	git clone https://github.com/baskerville/sxhkd
+	git clone https://github.com/yshui/picom
+	git clone https://github.com/davatorium/rofi
+	git clone https://github.com/polybar/polybar
+	cd .. && sudo make install /tmp/xdbars-resources
     ;;
 
    pkg)
