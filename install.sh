@@ -1,24 +1,4 @@
-#!/bin/bash
-
-# installs the necessary packages
-
-# yes
-echo "need root"
-
-G="\033[1;34m[*] \033[0m"
-S="\033[1;32m[+] \033[0m"
-E="\033[1;31m[-] \033[0m"
-
-if [[ $(id -u) != 0 ]]
-then
-   echo -e ""$E"Permission denied!"
-   exit
-fi
-
-sleep 0.5
 clear
-sleep 0.5
-
 echo -e "Thanks for using xdbars, enjoy the feeing of being a true soydev with you're epic tiling wm rice and CLI file manager, we hope it fills the void in your heart. Enter [start] to begin your install"
 read start
 
