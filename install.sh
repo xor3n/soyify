@@ -43,9 +43,16 @@ case $option1 in
    ;;
 esac
 
+clear
 echo -e "Now to deploy everything, this will also automate all configuration for you. Without this, you will only have the needed needed, they will simply be installed and not remain in use. For this read we recommend running this. [yes] [no]"
 
 read option4
+
+clear
+
+echo -e "First you're going to have to enter the name for your lower privilege user account"
+read user
+su $user
 
 case $option4 in
    yes)
