@@ -10,7 +10,6 @@ fi
 
 #install needed packages
 echo -e "This will install all needed packages (st, bspwm, sxhkd, ranger, polybar and rofi) to provide you with a fully functional yet minimal system. Without these installed deploy.sh won't work properly and then running bloatdestroyer.sh will give you a broken system (this is bad), that is why we highly recommend running this. Remember, you can cncel at any time with ctrl + c [yes] [no]"
-
 read option1
 clear
 
@@ -25,9 +24,7 @@ case $option1 in
 esac
 
 echo -e "Now to deploy everything, this will also automate all configuration for you. Without this, you will only have the packages needed, they will simply be installed and not remain in use. For this read we recommend running this. [yes] [no]"
-
 read option4
-
 clear
 
 case $option4 in
