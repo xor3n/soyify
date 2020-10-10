@@ -19,14 +19,19 @@ sleep 0.5
 clear
 sleep 0.5
 
-echo -e "Thanks for using xdbars, enjoy the feeing of being a true soydev with you're epic tiling wm rice and CLI file manager, we hope it fills the void in your heart."
+echo -e "Thanks for using xdbars, enjoy the feeing of being a true soydev with you're epic tiling wm rice and CLI file manager, we hope it fills the void in your heart. Enter [start] to begin your install"
+read start
 
-sleep 0.5
+if [ $start == start ]
+then 
+   clear
+fi
 
 #install needed packages
 echo -e "This will install all needed packages (st, bspwm, sxhkd, ranger, polybar and rofi) to provide you with a fully functional yet minimal system. Without these installed deploy.sh won't work properly and then running bloatdestroyer.sh will give you a broken system (this is bad), that is why we highly recommend running this. Remember, you can cncel at any time with ctrl + c [yes] [no]"
 
 read option1
+clear
 
 case $option1 in
    yes)
@@ -36,20 +41,6 @@ case $option1 in
    no)
       echo -e "We highly recommmend not running any other script except the hardening one as they may result in a non-fucntional system. However if you know wwhat you are doing, go ahead and run them."
    ;;
-esac
-
-echo -e "Now to harden everything, this will provide with a more secure system with no cost, your system will be just as functional, just as fast but far more secure [yes] [no]"
-
-read option3
-
-case $option3 in
-   yes)
-      bash harden.sh
-    ;;
-
-   no)
-      echo -e "Without running this your system may be vulnerable, however some users may not wish to have their system hardened, if not, keep going!"
-    ;;
 esac
 
 echo -e "Now to deploy everything, this will also automate all configuration for you. Without this, you will only have the needed needed, they will simply be installed and not remain in use. For this read we recommend running this. [yes] [no]"
@@ -66,6 +57,10 @@ case $option4 in
     ;;
 esac
 
-echo -e "thanks for using xdbars, we hope it worked, if not, that sucks, but feel free to let us know why at https://github.com/xor3n/xdbars. Don't forget to run postinstall.sh after you reboot!!"
+echo -e "thanks for using xdbars, we hope it worked, if not, that sucks, but feel free to let us know why at https://github.com/xor3n/xdbars. Don't forget to run postinstall.sh after you reboot!! Enter reboot to reboot."
+read reboot
 
-reboot
+if [ $reboot == reboot ]
+then
+   reboot
+fi
