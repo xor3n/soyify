@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# installs the necessary packages
-
-# yes
-echo "need root"
+# installs necessary packages
 
 G="\033[1;34m[*] \033[0m"
 S="\033[1;32m[+] \033[0m"
@@ -29,7 +26,7 @@ clear
 sleep 0.5
 
 # confirm operating system/distribution
-echo -e "enter your package manager, if you want to compile from source, just enter compile, if you don't know what a package manager is, type ?"
+echo -e "enter your package manager, if you want to compile from source, just enter compile"
 
 read OS
 
