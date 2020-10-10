@@ -98,4 +98,5 @@ case $OS in
 	emerge --ask x11-misc/rofi
 	emerge --ask x11-misc/polybar
 	emerge --ask app-misc/ranger
+     ;;
 esac
