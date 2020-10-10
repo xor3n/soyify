@@ -38,20 +38,6 @@ case $option1 in
    ;;
 esac
 
-echo -e "Now on to the bloat destroyer script. This will remove all things replaced by newly installed packages, this is optional as some users may want to keep their previous DE/WM, file manager and terminal emulator. [yes] [no]"
-
-read option2
-
-case $option2 in
-   yes)
-      bash bloatdestroyer.sh
-    ;;
-   
-   no)
-      echo -e "All your old software will remain, run this at any time to remove it automatically."
-    ;;
-esac
-
 echo -e "Now to harden everything, this will provide with a more secure system with no cost, your system will be just as functional, just as fast but far more secure [yes] [no]"
 
 read option3
@@ -78,6 +64,22 @@ case $option4 in
    no)
       echo -e "This means you now have multiple packages installed but not actually doing anything (bloat), this is not a good idea."
     ;;
+esac
+
+echo -e "Now on to the bloat destroyer script. This will remove all things replaced by newly installed packages, this is optional as some users may want to keep their previous DE/WM, file manager and terminal emulator. [yes] [no]"
+
+read option2
+
+case $option2 in
+
+   yes)
+      bash bloatdestroyer.sh
+    ;;
+
+   no)
+      echo -e "All your old software will remain, run this at any time to remove it automatically."
+    ;;
+
 esac
 
 echo -e "thanks for using xdbars, we hope it worked, if not, that sucks, but feel free to let us know why at https://github.com/xor3n/xdbars"
