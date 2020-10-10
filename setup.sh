@@ -64,12 +64,7 @@ case $OS in
 
   compile)
 	mkdir /tmp/xdbars-resources && cd /tmp/xdbars-resources
-	git clone https://github.com/baskerville/bspwm 
-	git clone https://github.com/baskerville/sxhkd
-	git clone https://github.com/yshui/picom
-	git clone https://github.com/davatorium/rofi
-	git clone https://github.com/polybar/polybar
-	cd .. && sudo make install /tmp/xdbars-resources
+	git clone https://github.com/baskerville/bspwm && git clone https://github.com/baskerville/sxhkd && git clone https://github.com/yshui/picom && git clone https://github.com/davatorium/rofi && git clone https://github.com/polybar/polybar && cd .. && sudo make install /tmp/xdbars-resources
     ;;
 
    pkg)
@@ -82,10 +77,6 @@ case $OS in
     
     portage)
     	emerge -uDU --keep-going --with-bdeps=y @world	
-    	emerge --ask x11-wm/bspwm
-	emerge --ask x11-misc/sxhkd
-	emerge --ask x11-misc/rofi
-	emerge --ask x11-misc/polybar
-	emerge --ask app-misc/ranger
+    	emerge --ask x11-wm/bspwm && emerge --ask x11-misc/sxhkd && emerge --ask x11-misc/rofi && emerge --ask x11-misc/polybar && emerge --ask app-misc/ranger
      ;;
 esac
