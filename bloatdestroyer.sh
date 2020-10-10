@@ -20,7 +20,11 @@ clear
 sleep 0.5
 
 echo -e "this script will remove all things replaced by setup.sh and will run your package managers autoclean, this script is optional as some users may desire to keep their old software, feel free to skip but know that this will result in wasted space."
+sleep 0.5
+echo -e "IMPORTANT: Run this sript from your newly set up terminal emulator: st"
+sleep 0.5
 echo -e "IMPORTANT: Do not fret if there are error messages about packages not being found, this is normal as some users may have different packages to another"
+sleep 0.5
 echo -e "enter your package manager:"
 
 read pacm
@@ -28,24 +32,55 @@ read pacm
 case $pacm in
 
 	apt)
-		#remove all file managers
-		apt-get autoremove --purge dolphin*
-		apt-get autoremove --purge nautilus*
-		apt-get autoremove --purge konqueror*
-		apt-get autoremove --purge nemo*
-		apt-get autoremove --purge thunar*
-		echo -e "if you are aware of any other file managers installed, feel free to type the name and have them automatically removed, if not; just hit enter and keep going!"
-		read fman
-		apt-get autoremove --purge $fman*
+		#remove all extra file managers
+        	echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+        	read fman
+        	apt-get autoremove --purge $fman*
+
 		#remove desktop environment
-		apt-get autoremove --purge gdm3*
-		apt-get autoremove --purge gnome*
-		apt-get autoremove --purge kde-full*
-		apt-get autoremove --purge xfce4*
-		echo -e "if you are aware of any other desktop environment installed, feel free to type the name of the package and have it automatically removed, if not; just hit enter and keep going!"
-		apt-get autoremove --purge x-terminal-emulator*
-		apt-get autoremove --purge konsole*
-		apt-get autoremove --purge gnome-terminal*
-		echo -e "if you are aware of any other terminal emulator installed, feel free to enter the package name and have automatically removed, like before, just hit enter if this is incorrect."
+        	echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+        	read b
+        
+		if [ $DEWM == list ]
+		then
+			echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+		else
+        		apt-get autoremove --purge $DEWM*
+		fi
+		
+		#remove old terminal emulator
+		echo -e "time to remove your old terminal emulator, just enter the package name and off we go"	
+		read TE
+		apt-get autoremove --purge $TE*
+		
+		#remove unecessary debian packages
+		apt-get autoremove --purge aptitude bc nano tcsh w3m zip mutt foomatic-filters vim-tiny vi hplip ncurses-term smclient ssh unzip tasksel vim-common wamerican whois
+		
 		apt-get autoremove
 		echo -e "bloat, destroyed."
+		
+	pacman)
+                echo -e "enter the name of your file manager here, if you have multiple, just seperate them by a space."
+                read fman
+                pacman -R $fman
+
+                #remove desktop environment + terminal emulator
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                read DEWM
+		
+                if [ $DEWM == list ]
+                then
+                        echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde"
+                else
+                        apacman -R $d*
+                fi
+
+                #remove old terminal emulator
+                echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
+                read TE
+                pacman -R $TE*
+
+                pacman -Rsn $(pacman -Qdtq)
+                echo -e "bloat, destroyed."
+
+		
