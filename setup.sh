@@ -1,32 +1,34 @@
-#!/bin/bash
+#!/bin/sh
 
-# installs necessary packages
+POSIXLY_CORRECT=1
+
+# installs the necessary packages
 
 G="\033[1;34m[*] \033[0m"
 S="\033[1;32m[+] \033[0m"
 E="\033[1;31m[-] \033[0m"
 
-if [[ $(id -u) != 0 ]]
+if [ $(id -u) != 0 ]
 then
-   echo -e ""$E"Permission denied!"
+   echo ""$E"Permission denied!"
    exit
 fi
 
 {
 ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
-if [[ "$ASESR" != 0 ]]
+if [ "$ASESR" != 0 ]
 then
-   echo -e ""$E"No Internet connection!"
+   echo ""$E"No Internet connection!"
    exit
 fi
 
 sleep 0.5
-clear
+#clear
 sleep 0.5
 
 # confirm operating system/distribution
-echo -e "enter your package manager, if you want to compile from source, just enter compile"
+echo "enter your package manager, if you want to compile from source, just enter compile, if you don't know what a package manager is, type ?"
 
 read OS
 
@@ -64,7 +66,12 @@ case $OS in
 
   compile)
 	mkdir /tmp/xdbars-resources && cd /tmp/xdbars-resources
-	git clone https://github.com/baskerville/bspwm && git clone https://github.com/baskerville/sxhkd && git clone https://github.com/yshui/picom && git clone https://github.com/davatorium/rofi && git clone https://github.com/polybar/polybar && cd .. && sudo make install /tmp/xdbars-resources
+	git clone https://github.com/baskerville/bspwm 
+	git clone https://github.com/baskerville/sxhkd
+	git clone https://github.com/yshui/picom
+	git clone https://github.com/davatorium/rofi
+	git clone https://github.com/polybar/polybar
+	cd .. && sudo make install /tmp/xdbars-resources
     ;;
 
    pkg)
@@ -77,6 +84,10 @@ case $OS in
     
     portage)
     	emerge -uDU --keep-going --with-bdeps=y @world	
-    	emerge --ask x11-wm/bspwm && emerge --ask x11-misc/sxhkd && emerge --ask x11-misc/rofi && emerge --ask x11-misc/polybar && emerge --ask app-misc/ranger
+    	emerge --ask x11-wm/bspwm
+	emerge --ask x11-misc/sxhkd
+	emerge --ask x11-misc/rofi
+	emerge --ask x11-misc/polybar
+	emerge --ask app-misc/ranger
      ;;
 esac
