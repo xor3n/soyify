@@ -37,15 +37,9 @@ case $pacm in
         	apt-get autoremove --purge $fman*
 
 		#remove desktop environment
-        	echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+        	echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
         	read DEWM
-        
-		case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			apt-get autoremove --purge $DEWM* ;;
-		esac
+        	apt-get autoremove --purge $DEWM* ;;
 		
 		#remove old terminal emulator
 		echo "time to remove your old terminal emulator, just enter the package name and off we go"	
@@ -65,16 +59,9 @@ case $pacm in
                 pacman -R $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-		
-			case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			pacman -R $DEWM* ;;
-		esac
-
+        	pacman -R $DEWM
 
                 #remove old terminal emulator
                 echo "time to remove your old terminal emulator, just enter the package name and off we go"
@@ -91,16 +78,9 @@ case $pacm in
                 yum remove $fman
 
 		#remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			yum remove $DEWM* ;;
-		esac
-
+        	yum remove $DEWM
 
                 #remove old terminal emulator
                 echo "time to remove your old terminal emulator, just enter the package name and off we go"
@@ -108,8 +88,6 @@ case $pacm in
                 yum remove $TE
 
                 yum remove `package-cleanup --leaves`
-		yum remove `package-cleanup --leaves`
-		yum remove `package-cleanup --leaves`
                 echo "bloat, destroyed."
 	  ;;	
 		
@@ -119,17 +97,10 @@ case $pacm in
                 eopkg remove $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
+        	eopkg remove $DEWM
 
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			eopkg remove $DEWM* ;;
-		esac
-
-		
                 #remove old terminal emulator
                 echo "time to remove your old terminal emulator, just enter the package name and off we go"
                 read TE
@@ -145,16 +116,9 @@ case $pacm in
                 xbps-remove $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			xbps-remove $DEWM* ;;
-		esac
-
+        	xbps-remove $DEWM
 
                 #remove old terminal emulator
                 echo "time to remove your old terminal emulator, just enter the package name and off we go"
@@ -171,15 +135,9 @@ case $pacm in
                 apk del $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			apk del $DEWM* ;;
-		esac
+        	apk del $DEWM*
 
 
                 #remove old terminal emulator
@@ -196,16 +154,9 @@ case $pacm in
                 brew remove $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo  "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			brew remove $DEWM* ;;
-		esac
-
+        	brew remove $DEWM*
 
                 #remove old terminal emulator
                 echo "time to remove your old terminal emulator, just enter the package name and off we go"
@@ -222,16 +173,9 @@ case $pacm in
                 pkg remove $fman
 
 		#remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-		
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			pkg remove $DEWM* ;;
-		esac
-
+        	pkg remove $DEWM
 
                 #remove old terminal emulator
                 echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
@@ -248,15 +192,9 @@ case $pacm in
                 dnf remove  $fman
 
                 #remove desktop environment + terminal emulator
-                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			dnf remove $DEWM* ;;
-		esac
+        	dnf remove $DEWM
 
 
                 #remove old terminal emulator
@@ -274,16 +212,9 @@ case $pacm in
                 emerge --deselect $fman
 
                 #remove desktop environment + terminal emulator
-                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name, if you need a list of common ones, enter list"
+                echo -e "enter your desktop environment or windows managers name here, if you have multiple, seperate them by a space, you must enter the package name, not the DE/WM's name."
                 read DEWM
-
-                case $DEWM in
-			list)
-				echo -e "gnome = gdm3 and gnome, kde = kde-full, xfce = xfce4, i3 = i3, lxde = lxde" ;;
-			*)
-        			portage --deselect $DEWM* ;;
-		esac
-
+        			portage --deselect $DEWM
 
                 #remove old terminal emulator
                 echo -e "time to remove your old terminal emulator, just enter the package name and off we go"
