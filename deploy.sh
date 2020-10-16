@@ -2,7 +2,12 @@
 
 POSIXLY_CORRECT=1
 
-# deploys dotfiles
-# cp -r files/dotfiles/themes/tomorrow-night/* files/config/
-cp -r files/dotfiles/themes/tomorrow-night/* /home/$USER/.config/
-#cp -r files/config/* ~/.config/
+#check if the user is root
+
+if ! [ $(id -u) = 0 ]; then
+	echo "Warning, you are not running this script as root, so the config file its gettin coppied to your profile"
+	cp -r files/dotfiles/themes/tomorrow-night/* /home/"$USER"/.config/
+#if the user is root
+else
+	cp -r files/dotfiles/themes/tomorrow-night/* ~/.config/
+fi
