@@ -28,3 +28,8 @@ DO NOT USE YET, THIS PROJECT IS UNFINISHED AND CURRENTLY IN DEVELOPMENT
 # Soydev
 - **cubeperson**
     - [Github](https://github.com/cubeperson)
+
+# Soydev
+- **AzgarDev**
+    - [Github](https://github.com/AzgarDev)
+
