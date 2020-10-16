@@ -14,21 +14,12 @@ then
    exit
 fi
 
-{
-ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
-} &> /dev/null
-if [ "$ASESR" != 0 ]
-then
-   echo ""$E"No Internet connection!"
-   exit
-fi
-
 sleep 0.5
 #clear
 sleep 0.5
 
 # confirm operating system/distribution
-echo "enter your package manager, if you want to compile from source, just enter compile, if you don't know what a package manager is, type ?"
+echo "enter your package manager, if you want to compile from source, just enter compile, if you don't know what a package manager is, type ? NOTE: an internet connection is expected."
 
 read OS
 
