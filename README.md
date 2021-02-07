@@ -1,7 +1,17 @@
 # soyify
 Soyify - soydev in seconds
 
-this project is currently being redone
+## I AM RE-DOING THIS PROJECT FROM SCRATCH
+
+
+## Usage
+
+simply put `exec bspwm` in your .xinitrc or select bspwm in your display manager
+
+## Configuration
+
+TODO
+
 
 
 
